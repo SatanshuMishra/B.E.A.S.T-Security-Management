@@ -1,5 +1,6 @@
+package beastSystem;
 
-public class SystemPrototype {
+public class beastSystem {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

@@ -5,5 +5,5 @@
  * @author satan
  *
  */
-module SystemPrototype {
+module beastSystem {
 }
