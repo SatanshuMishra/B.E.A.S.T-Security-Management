@@ -7,9 +7,10 @@ public class App {
         // employeeList.addUser(new User("John", "Doe"));
         // employeeList.addUser(new User("Jen", "Doe"));
 
-        AccessTerminal a = new AccessTerminal(5);
-        AccessTerminal b = new AccessTerminal(5);
-        AccessTerminal c = new AccessTerminal(5);
-        AccessTerminal d = new AccessTerminal(5);
+        Room officeABC = new Room(1, 1, 1);
+        AccessTerminal a = new AccessTerminal(5, officeABC);
+        AccessTerminal b = new AccessTerminal(5, officeABC);
+        AccessTerminal c = new AccessTerminal(5, officeABC);
+        AccessTerminal d = new AccessTerminal(5, officeABC);
     }
 }
