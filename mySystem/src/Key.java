@@ -3,7 +3,7 @@ import java.util.UUID;
 public class Key {
 	UUID id;
 	int clearanceLevel;
-	boolean isWorking = true;
+	boolean isSuspended = false;
 	
 	Key(int clearanceLevel){
 		this.id = UUID.randomUUID();
