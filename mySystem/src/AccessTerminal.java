@@ -5,12 +5,13 @@ public class AccessTerminal implements ManageFramework{
     boolean isFunctional = true;
     boolean isUnlocked = false;
     GUITerminal graphicalInterface;
-    int roomClearanceLevel;
+    Room room;
 
-    AccessTerminal(int securityLevel){
+    AccessTerminal(int securityLevel, Room room){
         this.id = UUID.randomUUID();
         this.securityLevel = securityLevel;
         graphicalInterface = new GUITerminal();
+        this.room = room;
     }
 
     @Override
