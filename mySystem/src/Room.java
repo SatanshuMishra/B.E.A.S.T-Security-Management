@@ -9,4 +9,8 @@ public class Room{
 		this.clearanceLevel = clearanceLevel;
 	}
 
+	public int getClearanceLevel() {
+		return clearanceLevel;
+	}
+
 }
