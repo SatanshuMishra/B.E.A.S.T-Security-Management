@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 import  java.util.logging.Logger;
 import java.util.logging.Level;
 
-public class AccessTerminal implements ManageFramework{
+public class AccessTerminal extends LoggerClass implements ManageFramework {
     UUID id;
     int securityLevel;
     boolean isFunctional = true;
@@ -40,6 +40,7 @@ public class AccessTerminal implements ManageFramework{
                 scanner.close();
                 isUnlocked = true;
                 System.out.println("<<INFORMATION>> DOOR UNLOCKED\n");
+                logToFile("Door Unlocked");
                 System.out.println(String.format("Access Granted!\nWelcome %s!\n", user.getName()));
                 try {
                     TimeUnit.SECONDS.sleep(5);
@@ -48,6 +49,7 @@ public class AccessTerminal implements ManageFramework{
                 }
                 isUnlocked = false;
                 System.out.println("<<INFORMATION>> DOOR LOCKED\n");
+                logToFile("Door Locked");
 
                 break;
             } else{
