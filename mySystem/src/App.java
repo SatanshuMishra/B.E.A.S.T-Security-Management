@@ -1,27 +1,23 @@
 import java.io.*;
 public class App {
+    public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RESET = "\u001B[0m";
     public static void main(String[] args) throws Exception {
 
         User a = new User("John", "Doe", "password");
         User b = new User("Jen", "Doe");
-        User c = new User("Bert", "Murphy");
-        User d = new User("Lily", "Smith");
-
         Key k_a = new Key(7);
         Key k_b = new Key(1);
-        Key k_c = new Key(5);
-        Key k_d = new Key(2);
 
         a.setKey(k_a);
         b.setKey(k_b);
-        c.setKey(k_c);
-        d.setKey(k_d);
-
-        System.out.println(a.getName() + " " + k_a.getId());
-        System.out.println(d.getName() + " " + k_d.getId());
+        String debugMarker = ANSI_WHITE_BACKGROUND + ANSI_BLACK + "[DEBUG]" + ANSI_RESET + " ";
+        System.out.println(debugMarker + a.getName() + " " + k_a.getId());
+        System.out.println(debugMarker + b.getName() + " " + k_b.getId());
         
-        User[] userList = {a, b, c, d};
-        Key[] keyList = {k_a, k_b, k_c, k_d};
+        User[] userList = {a, b};
+        Key[] keyList = {k_a, k_b};
 
 
         // Serialization USERS
@@ -36,7 +32,7 @@ public class App {
             out.close(); 
             file.close();
               
-            System.out.println("Object has been serialized"); 
+            System.out.println(debugMarker + "User Objects successfully stored in File."); 
   
         } catch(IOException ex) 
         { 
@@ -55,7 +51,7 @@ public class App {
             out.close(); 
             file.close();
               
-            System.out.println("Object has been serialized"); 
+            System.out.println(debugMarker + "Key Objects successfully stored in File."); 
   
         } catch(IOException ex) 
         { 
