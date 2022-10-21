@@ -19,4 +19,16 @@ be converted into an actual database
 ManageFramework class: 
 this is an interface which is used by the AccessTerminal class
 
+LoggerClass class:
+class that creates a .txt file and logs that a door was unlocked and locked
+
 AccessTerminal class: 
+this is the class where most of our system functionality occurs. a user's key is checked to see if it exists, if it does then it checks if the owner of this key
+exists by reading it from a text file. if the owner exists, then it checks if the owner's key has a security level that is larger than or equal to that of the 
+access terminal. if so, then the person is allowed to enter and a welcome message is provided, along with the hypothetical door opening and then closing after 
+a 5 second delay. in any of the cases that the owner doesnt exist or the key doesnt exist, an error is generated asking the user of the system to try and enter a
+different key to try again. if there are multiple failed attempts, the system generates an access denied message and the user of the system can no longer try again
+
+to run the code, App.java is the main file. by running, an output will be produced, for our current demo, each person's key is visible to us and we have to 
+enter it manually. for our system right now, Jon Doe's key is correct and true. if copied and then pasted under the "enter key id" prompt, a message proving that 
+the door has been unlocked will be shown. Lily Smith's key is not detected and therefore will generate an error if the system is asked to let her in. 
