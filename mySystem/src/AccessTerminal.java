@@ -14,6 +14,12 @@ public class AccessTerminal extends LoggerClass implements ManageFramework {
     Room room;
     Logger logger = Logger.getLogger("SPES");
 
+    public static final String ANSI_WHITE = "\u001B[37m";
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
+    
+    String informationMarker = ANSI_PURPLE_BACKGROUND + ANSI_WHITE + "[INFORMATION]" + ANSI_RESET + " ";
+
     AccessTerminal(Room room){
         this.id = UUID.randomUUID();
         this.room = room;
@@ -27,40 +33,34 @@ public class AccessTerminal extends LoggerClass implements ManageFramework {
     }
 
     public void accessTerminalLogin(){
-        int tally = 0;
         Scanner scanner = new Scanner(System.in);
 
         // GET KEYCARD ID
-        System.out.println("Enter Key ID: ");
-        UUID enteredKeyId = UUID.fromString(scanner.nextLine());
 
-        while(tally < 3){
+        while(true){
+            System.out.print("Enter Key ID: ");
+            UUID enteredKeyId = UUID.fromString(scanner.nextLine());
             User user = authenticateUser(enteredKeyId);
             if(user != null){
-                scanner.close();
+                // scanner.close();
                 isUnlocked = true;
-                System.out.println("<<INFORMATION>> DOOR UNLOCKED\n");
-                logToFile("Door Unlocked");
-                System.out.println(String.format("Access Granted!\nWelcome %s!\n", user.getName()));
+                System.out.println(informationMarker + "DOOR UNLOCKED\n");
+                logToFile("DOOR UNLOCKED");
+                System.out.println(String.format("ACCESS GRANTED!\nWELCOME %s!\n", user.getName().toUpperCase()));
                 try {
                     TimeUnit.SECONDS.sleep(5);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
                 isUnlocked = false;
-                System.out.println("<<INFORMATION>> DOOR LOCKED\n");
-                logToFile("Door Locked");
+                System.out.println(informationMarker + "DOOR LOCKED\n");
+                logToFile("DOOR LOCKED");
 
-                break;
+                // break;
             } else{
-                tally++;
-                System.out.println("Access Denied! Please Try again!");
-                System.out.println("Enter Key ID: ");
-                enteredKeyId = UUID.fromString(scanner.nextLine());
+                System.out.println("ACCESS DENIED!");
             }
         }
-        System.out.println("REACHED LIMIT OF ATTEMPTS.");
-
     }
 
     @Override
@@ -68,13 +68,13 @@ public class AccessTerminal extends LoggerClass implements ManageFramework {
 
         // DEBUG
         // System.out.println("ENTERED AUTHENTICATE USER");
-        logger.log(Level.INFO, "Entered Authenticate User");
+        // logger.log(Level.INFO, "Entered Authenticate User");
 
         Key key = findKey(keyId);
         User user;
 
         if(key != null){
-            if(key.getClearanceLevel() >= securityLevel ){
+            if(key.getClearanceLevel() >= securityLevel){
                 user = findUser(key);
                 if(user != null)
                     return user;
@@ -131,7 +131,7 @@ public class AccessTerminal extends LoggerClass implements ManageFramework {
 
     @Override
     public Key findKey(UUID keyId) {
-        System.out.println("ENTERED FIND KEY");
+        // System.out.println("ENTERED FIND KEY");
         Key key;
         try
         {    
