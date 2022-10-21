@@ -22,6 +22,9 @@ this is an interface which is used by the AccessTerminal class
 LoggerClass class:
 class that creates a .txt file and logs that a door was unlocked and locked
 
+GUITerminal class:
+this class contains the first attempt at making a GUI for our system. it is not complete therefore not used within the demo. 
+
 AccessTerminal class: 
 this is the class where most of our system functionality occurs. a user's key is checked to see if it exists, if it does then it checks if the owner of this key
 exists by reading it from a text file. if the owner exists, then it checks if the owner's key has a security level that is larger than or equal to that of the 
