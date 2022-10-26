@@ -1,7 +1,6 @@
 import java.util.UUID;
-import java.io.Serializable;
 
-public class User implements Serializable{
+public class User{
 	private UUID id;
 	private String firstName;
 	private String lastName;
@@ -13,11 +12,39 @@ public class User implements Serializable{
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
+	
+	User(UUID id, String firstName, String lastName){
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+	User(UUID id, String firstName, String lastName, Key key){
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.key = key;
+	}
 
 	User(String firstName, String lastName, String loginKey){
 		this.id = UUID.randomUUID();
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.loginKey = loginKey;
+	}
+
+	User(UUID id, String firstName, String lastName, String loginKey){
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.loginKey = loginKey;
+	}
+
+	User(UUID id, String firstName, String lastName, Key key, String loginKey){
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.key = key;
 		this.loginKey = loginKey;
 	}
 

@@ -1,25 +1,57 @@
 import java.sql.*;
 import java.util.UUID;
 
-public class AccessTerminal{
+public class SystemTerminal{
     private UUID id;
-    private int securityLevel;
-    private boolean isActive = true;
-    private boolean isLocked = true;
     private Room room;
 
-    AccessTerminal(Room room){
+    SystemTerminal(Room room){
         this.id = UUID.randomUUID();
         this.room = room;
-        this.securityLevel = room.getClearanceLevel();
     }
 
-    /**
-    Takes the given UUID and authenticates it. If successful, it grants access to the user.
-    @param UUID an keyId
-    @return Returns void
-    @throws what kind of exception does this method throw
-    */
+    public User addUser(){
+        String url = "jdbc:mysql://localhost/files";
+        String uid = "root";
+        String pw = "310rootypw";
+
+        String insertStatement = """
+            INSERT INTO users *
+            VALUES(
+                ?,
+                ?,
+                ?,
+                ?,
+                ?
+            )
+        """;
+
+        try ( Connection con = DriverManager.getConnection(url, uid, pw);
+        PreparedStatement pstmt = con.prepareStatement(insertStatement);) 
+        {
+            pstmt.setString(1, ""); // UUID
+            pstmt.setString(2, ""); // FIRSTNAME
+            pstmt.setString(3, ""); // LASTNAME
+            pstmt.setString(4, ""); // KEY UUID
+            pstmt.setString(5, ""); // LOGIN KEY
+
+            pstmt.executeUpdate();
+        }
+        catch (SQLException ex)
+        {
+            System.err.println("SQLException: " + ex);
+            return null;
+        }
+        return null;
+    }
+
+    public void removeUser(){
+        // -TO-DO-
+    }
+
+    public void modifyUser(){
+        // -TO-DO-
+    }
 
     public void authenticateUser(UUID keyId) {
         Key key = findKey(keyId);
@@ -27,7 +59,7 @@ public class AccessTerminal{
         // CHECK KEY
         if(key != null){
             if(key.isActive){
-                if(key.clearanceLevel >= securityLevel){
+                if(key.clearanceLevel >= 5){
                     User user = findUser(key);
                     if(user != null){
                         // -TO-DO-
@@ -175,3 +207,6 @@ public class AccessTerminal{
     }
 
 }
+
+
+
