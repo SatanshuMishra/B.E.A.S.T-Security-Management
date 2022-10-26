@@ -1,14 +1,19 @@
 import java.util.UUID;
-import java.io.Serializable;
 
-public class Key implements Serializable{
+public class Key{
 	UUID id;
 	int clearanceLevel;
-	boolean isSuspended = false;
+	boolean isActive = true;
 	
 	Key(int clearanceLevel){
 		this.id = UUID.randomUUID();
 		this.clearanceLevel = clearanceLevel;
+	}
+
+	Key(UUID id, int clearanceLevel, boolean isActive){
+		this.id = id;
+		this.clearanceLevel = clearanceLevel;
+		this.isActive = isActive;
 	}
 
 	public UUID getId() {
@@ -27,12 +32,12 @@ public class Key implements Serializable{
 		this.clearanceLevel = clearanceLevel;
 	}
 
-	public boolean getIsSuspended() {
-		return isSuspended;
+	public boolean getIsActive() {
+		return isActive;
 	}
 
-	public void setSuspended(boolean isSuspended) {
-		this.isSuspended = isSuspended;
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
 	}
 	
 }
