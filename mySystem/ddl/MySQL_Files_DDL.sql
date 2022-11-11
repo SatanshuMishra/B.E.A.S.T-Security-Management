@@ -23,8 +23,6 @@ CREATE TABLE users (
  FOREIGN KEY (kuuid) REFERENCES keyCards(kuuid)
 );
 
-CREATE TABLE 
-
 INSERT INTO keyCards VALUES ('38f5b748-0ca9-4873-ad07-014749cf8389', 5, 1);
 INSERT INTO users VALUES ('c88bb0d4-d6e6-48e8-a3ef-86e7550ea1b2','John', 'Doe', '38f5b748-0ca9-4873-ad07-014749cf8389', NULL);
 

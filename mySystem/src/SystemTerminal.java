@@ -53,7 +53,7 @@ public class SystemTerminal{
         // -TO-DO-
     }
 
-    public void authenticateUser(UUID keyId) {
+    public User authenticateUser(UUID keyId) {
         Key key = findKey(keyId);
         
         // CHECK KEY
@@ -68,6 +68,7 @@ public class SystemTerminal{
 
                         // DEBUG
                         System.out.println("ACCESS GRANTED TO " + user.getName().toUpperCase());
+                        return user;
                     } else{
                         // -TO-DO-
                         // DENY ACCESS
@@ -76,6 +77,7 @@ public class SystemTerminal{
 
                         // DEBUG
                         System.out.println("USER IS NULL");
+                        return null;
                     }
                 } else{
                     // -TO-DO-
@@ -84,6 +86,7 @@ public class SystemTerminal{
 
                     // DEBUG
                     System.out.println("KEY DOESN'T HAVE CLEARANCE");
+                    return null;
                 }
             } else{
                 // -TO-DO-
@@ -92,6 +95,7 @@ public class SystemTerminal{
 
                 // DEBUG
                 System.out.println("KEY IS INACTIVE");
+                return null;
             }
         } else{
             // -TO-DO-
@@ -101,6 +105,7 @@ public class SystemTerminal{
 
             // DEBUG
             System.out.println("KEY IS NULL");
+            return null;
         }
     }   
 
