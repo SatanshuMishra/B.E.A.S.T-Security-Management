@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.UUID;
 
 public class SystemTerminal{
@@ -211,6 +212,38 @@ public class SystemTerminal{
         return null;
     }
 
+    public ArrayList<Object[]> populateTable() {
+        String url = "jdbc:mysql://localhost/files";
+        String uid = "root";
+        String pw = "310rootypw";
+
+        String selectStatement = """
+            SELECT *
+            FROM users
+            ORDER BY firstName LIMIT 5
+        """;
+
+        try ( Connection con = DriverManager.getConnection(url, uid, pw);
+        PreparedStatement pstmt = con.prepareStatement(selectStatement, ResultSet.TYPE_SCROLL_SENSITIVE, 
+        ResultSet.CONCUR_UPDATABLE);) 
+        {
+            ResultSet resultSet = pstmt.executeQuery();
+            ArrayList<Object[]> rows = new ArrayList<Object[]>();
+
+            while(resultSet.next()){
+                Key key = findKey(UUID.fromString(resultSet.getString("kuuid")));
+                Object[] row  = {resultSet.getString("uuid"), resultSet.getString("firstName"), resultSet.getString("lastName"), String.valueOf(key.getClearanceLevel())};
+                rows.add(row);
+            }
+
+            return rows;
+        }
+        catch (SQLException ex)
+        {
+            System.err.println("SQLException: " + ex);
+            return null;
+        }
+    }
 }
 
 

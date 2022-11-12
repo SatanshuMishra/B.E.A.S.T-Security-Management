@@ -1,18 +1,10 @@
+import java.util.ArrayList;
 import java.util.UUID;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-// package guidesign;
+import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author satan
- */
 public class SystemTerminalGui extends javax.swing.JFrame {
 
-    SystemTerminal gui = new SystemTerminal(new Room(501, 2, 4));
     /**
      * Creates new form SystemTerminalGui
      */
@@ -28,54 +20,44 @@ public class SystemTerminalGui extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
-
+        terminal = new SystemTerminal(new Room(100, 5, 4));
         jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
         LoginScreen = new javax.swing.JPanel();
         HelloText = new javax.swing.JLabel();
         SignInToAccText = new javax.swing.JLabel();
         KeyIdField = new javax.swing.JTextField();
         PasswordField = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        signInBtn = new javax.swing.JButton();
+        panelRound3 = new swing_assets.PanelRound();
+        jLabel7 = new javax.swing.JLabel();
         configPage = new javax.swing.JPanel();
         sidebar = new javax.swing.JPanel();
         userLabel = new javax.swing.JLabel();
         keyLabel = new javax.swing.JLabel();
         systemLabel = new javax.swing.JLabel();
         logOutLabel = new javax.swing.JLabel();
-        dashLabel3 = new javax.swing.JLabel();
+        dashboardLabel = new javax.swing.JLabel();
         configContent = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         dashboardTab = new javax.swing.JPanel();
-        empPanel = new javax.swing.JPanel();
-        empNum = new javax.swing.JLabel();
-        empLabel = new javax.swing.JLabel();
+        panelRound1 = new swing_assets.PanelRound();
         jLabel1 = new javax.swing.JLabel();
-        staffPanel = new javax.swing.JPanel();
-        staffNum = new javax.swing.JLabel();
-        staffLabel = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        warningPanel = new javax.swing.JPanel();
-        dashLabel6 = new javax.swing.JLabel();
-        dashLabel5 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        empPanel2 = new javax.swing.JPanel();
-        dashLabel = new javax.swing.JLabel();
-        usersTab = new javax.swing.JPanel();
-        usersLabel = new javax.swing.JLabel();
-        searchPanel = new javax.swing.JPanel();
-        searchLabel = new javax.swing.JLabel();
-        searchField = new searchTextField();
-        searchBtn = new javax.swing.JButton();
-        userInformationPanel = new javax.swing.JPanel();
-        userInformationLabel = new javax.swing.JLabel();
-        idLabel = new javax.swing.JLabel();
         firstNameLabel = new javax.swing.JLabel();
-        lastNameLabel = new javax.swing.JLabel();
-        clearanceLevelLabel = new javax.swing.JLabel();
-        idField = new javax.swing.JLabel();
-        firstNameField = new javax.swing.JLabel();
-        lastNameField = new javax.swing.JLabel();
-        clearanceField = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        usersTab = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        panelRound2 = new swing_assets.PanelRound();
+        dashboardLabel1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        userNameSearchField = new swing_assets.TextField();
+        panelRound4 = new swing_assets.PanelRound();
+        dashboardLabel2 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        usersQuery = new swing_assets.Table();
+        jPanel1 = new javax.swing.JPanel();
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -107,55 +89,114 @@ public class SystemTerminalGui extends javax.swing.JFrame {
 
         KeyIdField.setBackground(new java.awt.Color(22, 98, 243));
         KeyIdField.setForeground(new java.awt.Color(255, 255, 255));
-        KeyIdField.setText("KEY ID");
+        // KeyIdField.setText("Enter your key id");
+        KeyIdField.setText("38f5b748-0ca9-4873-ad07-014749cf8389");
         KeyIdField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(0, 0, 0)));
-        KeyIdField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                KeyIdFieldActionPerformed(evt);
+        // KeyIdField.addMouseListener(new java.awt.event.MouseAdapter() {
+        //     public void mouseClicked(java.awt.event.MouseEvent evt) {
+        //         KeyIdField.setText("");
+        //     }
+        // });
+        KeyIdField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                if(KeyIdField.getText().equals("Enter your KeyCard ID"))
+                    KeyIdField.setText("");
+            }
+        });
+        KeyIdField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                if(KeyIdField.getText().equals(""))
+                    KeyIdField.setText("Enter your KeyCard ID");
             }
         });
 
         PasswordField.setBackground(new java.awt.Color(22, 98, 243));
         PasswordField.setForeground(new java.awt.Color(255, 255, 255));
-        PasswordField.setText("PASSWORD");
+        // PasswordField.setText("Enter your password");
+        PasswordField.setText("Johnpass");
         PasswordField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(0, 0, 0)));
-        PasswordField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PasswordFieldActionPerformed(evt);
+        PasswordField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                if(KeyIdField.getText().equals("Enter your password"))
+                    KeyIdField.setText("");
+            }
+        });
+        PasswordField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                if(KeyIdField.getText().equals(""))
+                    KeyIdField.setText("Enter your password");
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("SIGN IN");
-        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        signInBtn.setBackground(new java.awt.Color(255, 255, 255));
+        signInBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        signInBtn.setForeground(new java.awt.Color(0, 0, 0));
+        signInBtn.setText("SIGN IN");
+        signInBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 5, true));
+        signInBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                String keyCardID = KeyIdField.getText().toString();
+                String pass = PasswordField.getText().toString();
+                User user = terminal.authenticateUser(UUID.fromString(keyCardID));
+                if(user != null){
+                    if(user.getLoginKey().equals(pass)){
+                        LoginScreen.setVisible(false);
+                        firstNameLabel.setText(user.getFirstName());
+                        jTabbedPane2.setSelectedIndex(0);
+                        configPage.setVisible(true);
+                    } else {
+                        System.out.println("Incorrect Password");
+                    }
+                } else{
+                    // 🚩FLAG ERROR
+                }
             }
         });
+
+        panelRound3.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound3.setRoundBottomLeft(20);
+        panelRound3.setRoundTopLeft(20);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/undraw_my_password_re_ydq7@0.8x.png"))); // NOI18N
+
+        javax.swing.GroupLayout panelRound3Layout = new javax.swing.GroupLayout(panelRound3);
+        panelRound3.setLayout(panelRound3Layout);
+        panelRound3Layout.setHorizontalGroup(
+            panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound3Layout.createSequentialGroup()
+                .addContainerGap(43, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addGap(33, 33, 33))
+        );
+        panelRound3Layout.setVerticalGroup(
+            panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addGap(89, 89, 89))
+        );
 
         javax.swing.GroupLayout LoginScreenLayout = new javax.swing.GroupLayout(LoginScreen);
         LoginScreen.setLayout(LoginScreenLayout);
         LoginScreenLayout.setHorizontalGroup(
             LoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LoginScreenLayout.createSequentialGroup()
-                .addGap(61, 61, 61)
+                .addGap(100, 100, 100)
                 .addGroup(LoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
+                    .addComponent(signInBtn)
                     .addGroup(LoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(KeyIdField)
                         .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(LoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(HelloText)
                         .addComponent(SignInToAccText, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(609, Short.MAX_VALUE))
+                .addGap(100, 100, 100)
+                .addComponent(panelRound3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         LoginScreenLayout.setVerticalGroup(
             LoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginScreenLayout.createSequentialGroup()
-                .addContainerGap(189, Short.MAX_VALUE)
+                .addContainerGap(141, Short.MAX_VALUE)
                 .addComponent(HelloText)
                 .addGap(0, 0, 0)
                 .addComponent(SignInToAccText)
@@ -164,8 +205,9 @@ public class SystemTerminalGui extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(jButton1)
-                .addGap(90, 90, 90))
+                .addComponent(signInBtn)
+                .addGap(138, 138, 138))
+            .addComponent(panelRound3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         getContentPane().add(LoginScreen, "card2");
@@ -179,421 +221,342 @@ public class SystemTerminalGui extends javax.swing.JFrame {
         sidebar.setBackground(new java.awt.Color(255, 255, 255));
         sidebar.setForeground(new java.awt.Color(255, 255, 255));
 
-        userLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        userLabel.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 12)); // NOI18N
         userLabel.setForeground(new java.awt.Color(40, 48, 59));
         userLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         userLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons8-search-client-24.png"))); // NOI18N
-        userLabel.setText("USERS");
+        userLabel.setText("Users");
+        userLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 0));
         userLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                userLabelMouseClicked(evt);
+                jTabbedPane2.setSelectedIndex(1);
+
+                // REMOVÉ ALL ROWS
+
+                int rowCount = usersQuery.getRowCount();
+                for (int i = rowCount - 1; i >= 0; i--) {
+                    model.removeRow(i);
+                }
+
+                // ADD ROWS
+                ArrayList<Object[]> rows = terminal.populateTable();
+                if(!rows.isEmpty()){
+                    for (int i = 0; i < rows.size(); i++) {
+                        Object[] row = rows.get(i);
+                        usersQuery.addRow(row);
+                    }
+                } else{
+                    System.out.println("Empty rows ArrayList");
+                }
             }
         });
 
-        keyLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        keyLabel.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 12)); // NOI18N
         keyLabel.setForeground(new java.awt.Color(40, 48, 59));
         keyLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         keyLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons8-password-key-24.png"))); // NOI18N
-        keyLabel.setText("KEYS");
+        keyLabel.setText("Keys");
+        keyLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 0));
 
-        systemLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        keyLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane2.setSelectedIndex(2);
+            }
+        });
+
+        systemLabel.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 12)); // NOI18N
         systemLabel.setForeground(new java.awt.Color(40, 48, 59));
         systemLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         systemLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons8-system-information-24.png"))); // NOI18N
-        systemLabel.setText("SYSTEM");
+        systemLabel.setText("System");
+        systemLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 0));
 
-        logOutLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        logOutLabel.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 12)); // NOI18N
         logOutLabel.setForeground(new java.awt.Color(40, 48, 59));
         logOutLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         logOutLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons8-logout-24.png"))); // NOI18N
-        logOutLabel.setText("LOG OUT");
+        logOutLabel.setText("Sign out");
         logOutLabel.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        logOutLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                configPage.setVisible(false);
+                LoginScreen.setVisible(true);
+            }
+        });
 
-        dashLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        dashLabel3.setForeground(new java.awt.Color(40, 48, 59));
-        dashLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dashLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/dashboard.png"))); // NOI18N
-        dashLabel3.setText("DASHBOARD");
+        dashboardLabel.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 12)); // NOI18N
+        dashboardLabel.setForeground(new java.awt.Color(40, 48, 59));
+        dashboardLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dashboardLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/dashboard.png"))); // NOI18N
+        dashboardLabel.setText("Dashboard");
+        dashboardLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 0));
+        dashboardLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane2.setSelectedIndex(0);
+            }
+        });
 
         javax.swing.GroupLayout sidebarLayout = new javax.swing.GroupLayout(sidebar);
         sidebar.setLayout(sidebarLayout);
         sidebarLayout.setHorizontalGroup(
             sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidebarLayout.createSequentialGroup()
-                .addGap(0, 27, Short.MAX_VALUE)
+                .addGap(0, 21, Short.MAX_VALUE)
                 .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(userLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(keyLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(systemLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(logOutLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dashLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(dashboardLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(userLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(keyLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(systemLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidebarLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(logOutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         sidebarLayout.setVerticalGroup(
             sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidebarLayout.createSequentialGroup()
                 .addGap(99, 99, 99)
-                .addComponent(dashLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dashboardLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(userLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(keyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(systemLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(logOutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         configContent.setBackground(new java.awt.Color(247, 248, 252));
         configContent.setForeground(new java.awt.Color(247, 248, 252));
 
-        jTabbedPane2.setBackground(new java.awt.Color(247, 248, 252));
+        jTabbedPane2.setBackground(new java.awt.Color(247, 247, 247));
         jTabbedPane2.setForeground(new java.awt.Color(0, 0, 0));
+        jTabbedPane2.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
+        jTabbedPane2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        dashboardTab.setBackground(new java.awt.Color(247, 248, 252));
+        dashboardTab.setBackground(new java.awt.Color(247, 247, 247));
         dashboardTab.setForeground(new java.awt.Color(247, 248, 252));
 
-        empPanel.setBackground(new java.awt.Color(255, 255, 255));
-        empPanel.setPreferredSize(new java.awt.Dimension(158, 80));
+        panelRound1.setBackground(new java.awt.Color(248, 72, 94));
+        panelRound1.setRoundBottomLeft(20);
+        panelRound1.setRoundBottomRight(20);
+        panelRound1.setRoundTopLeft(20);
+        panelRound1.setRoundTopRight(20);
 
-        empNum.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        empNum.setForeground(new java.awt.Color(0, 0, 0));
-        empNum.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        empNum.setText("250");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/undraw_dev_focus_re_6iwt@0.8x.png"))); // NOI18N
 
-        empLabel.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
-        empLabel.setForeground(new java.awt.Color(105, 105, 105));
-        empLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        empLabel.setText("EMPLOYEES");
-        empLabel.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        firstNameLabel.setFont(new java.awt.Font("Microsoft YaHei", 1, 24)); // NOI18N
+        firstNameLabel.setForeground(new java.awt.Color(255, 255, 255));
+        firstNameLabel.setText("Name");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons8-account-24.png"))); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Microsoft YaHei", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Welcome back,");
 
-        javax.swing.GroupLayout empPanelLayout = new javax.swing.GroupLayout(empPanel);
-        empPanel.setLayout(empPanelLayout);
-        empPanelLayout.setHorizontalGroup(
-            empPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, empPanelLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+        javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
+        panelRound1.setLayout(panelRound1Layout);
+        panelRound1Layout.setHorizontalGroup(
+            panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound1Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(firstNameLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addGroup(empPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(empNum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(empLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE))
-                .addGap(15, 15, 15))
+                .addGap(54, 54, 54))
         );
-        empPanelLayout.setVerticalGroup(
-            empPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(empPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(empNum)
+        panelRound1Layout.setVerticalGroup(
+            panelRound1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(panelRound1Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(empLabel)
-                .addGap(20, 20, 20))
-            .addGroup(empPanelLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1)
+                .addComponent(firstNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        staffPanel.setBackground(new java.awt.Color(255, 255, 255));
-        staffPanel.setPreferredSize(new java.awt.Dimension(158, 80));
+        jLabel2.setFont(new java.awt.Font("Microsoft YaHei", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Dashboard");
 
-        staffNum.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        staffNum.setForeground(new java.awt.Color(0, 0, 0));
-        staffNum.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        staffNum.setText("250");
-
-        staffLabel.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
-        staffLabel.setForeground(new java.awt.Color(105, 105, 105));
-        staffLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        staffLabel.setText("ACTIVE STAFF");
-        staffLabel.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons8-worker-24 (1).png"))); // NOI18N
-
-        javax.swing.GroupLayout staffPanelLayout = new javax.swing.GroupLayout(staffPanel);
-        staffPanel.setLayout(staffPanelLayout);
-        staffPanelLayout.setHorizontalGroup(
-            staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, staffPanelLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addGroup(staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(staffNum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(staffLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15))
-        );
-        staffPanelLayout.setVerticalGroup(
-            staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(staffPanelLayout.createSequentialGroup()
-                .addGroup(staffPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(staffPanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(staffNum)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(staffLabel))
-                    .addGroup(staffPanelLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        warningPanel.setBackground(new java.awt.Color(255, 255, 255));
-
-        dashLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        dashLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        dashLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dashLabel6.setText("250");
-
-        dashLabel5.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
-        dashLabel5.setForeground(new java.awt.Color(105, 105, 105));
-        dashLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dashLabel5.setText("WARNINGS");
-        dashLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons8-notification-24 (1).png"))); // NOI18N
-
-        javax.swing.GroupLayout warningPanelLayout = new javax.swing.GroupLayout(warningPanel);
-        warningPanel.setLayout(warningPanelLayout);
-        warningPanelLayout.setHorizontalGroup(
-            warningPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, warningPanelLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
-                .addGroup(warningPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(dashLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(dashLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15))
-        );
-        warningPanelLayout.setVerticalGroup(
-            warningPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(warningPanelLayout.createSequentialGroup()
-                .addGroup(warningPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(warningPanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(dashLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dashLabel5))
-                    .addGroup(warningPanelLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel3)))
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-
-        empPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        empPanel2.setPreferredSize(new java.awt.Dimension(158, 80));
-
-        dashLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        dashLabel.setForeground(new java.awt.Color(40, 48, 59));
-        dashLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dashLabel.setText("LATEST LOGS");
-
-        javax.swing.GroupLayout empPanel2Layout = new javax.swing.GroupLayout(empPanel2);
-        empPanel2.setLayout(empPanel2Layout);
-        empPanel2Layout.setHorizontalGroup(
-            empPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(empPanel2Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(dashLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        empPanel2Layout.setVerticalGroup(
-            empPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(empPanel2Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(dashLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(338, Short.MAX_VALUE))
-        );
+        jLabel5.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel5.setText("20 Sep 2019, Friday");
+        jLabel5.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 5));
 
         javax.swing.GroupLayout dashboardTabLayout = new javax.swing.GroupLayout(dashboardTab);
         dashboardTab.setLayout(dashboardTabLayout);
         dashboardTabLayout.setHorizontalGroup(
             dashboardTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dashboardTabLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(30, 30, 30)
                 .addGroup(dashboardTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(dashboardTabLayout.createSequentialGroup()
-                        .addComponent(empPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(staffPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(empPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE))
-                .addGap(26, 26, 26)
-                .addComponent(warningPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         dashboardTabLayout.setVerticalGroup(
             dashboardTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dashboardTabLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(dashboardTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(warningPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(empPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(staffPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addGroup(dashboardTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(empPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(453, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("tab1", dashboardTab);
 
-        usersTab.setBackground(new java.awt.Color(247, 248, 252));
+        usersTab.setBackground(new java.awt.Color(247, 247, 247));
         usersTab.setForeground(new java.awt.Color(247, 248, 252));
 
-        usersLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        usersLabel.setForeground(new java.awt.Color(40, 48, 59));
-        usersLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        usersLabel.setText("USERS");
+        jLabel6.setFont(new java.awt.Font("Microsoft YaHei", 1, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Users");
 
-        searchPanel.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound2.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound2.setRoundBottomLeft(20);
+        panelRound2.setRoundBottomRight(20);
+        panelRound2.setRoundTopLeft(20);
+        panelRound2.setRoundTopRight(20);
 
-        searchLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        searchLabel.setForeground(new java.awt.Color(40, 48, 59));
-        searchLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        searchLabel.setText("Who are you looking for?");
-
-        searchField.setText("Search for a name");
-        searchField.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        searchField.setPrefixIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons8-search-20.png"))); // NOI18N
-        searchField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchFieldActionPerformed(evt);
+        dashboardLabel1.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 12)); // NOI18N
+        dashboardLabel1.setForeground(new java.awt.Color(40, 48, 59));
+        dashboardLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dashboardLabel1.setText("Who are you looking for?");
+        dashboardLabel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 0));
+        dashboardLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                dashboardLabel1MouseEntered(evt);
             }
         });
 
-        searchBtn.setBackground(new java.awt.Color(22, 98, 243));
-        searchBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        searchBtn.setForeground(new java.awt.Color(255, 255, 255));
-        searchBtn.setText("SEARCH");
-        searchBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        searchBtn.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setBackground(new java.awt.Color(22, 98, 243));
+        jButton2.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 10)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("SEARCH");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchBtnActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout searchPanelLayout = new javax.swing.GroupLayout(searchPanel);
-        searchPanel.setLayout(searchPanelLayout);
-        searchPanelLayout.setHorizontalGroup(
-            searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(searchPanelLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(searchLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(searchPanelLayout.createSequentialGroup()
-                        .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
+        userNameSearchField.setBackground(new java.awt.Color(247, 247, 247));
+        userNameSearchField.setText("Enter a name");
+        userNameSearchField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                if(userNameSearchField.getText().equals("Enter a name"))
+                    userNameSearchField.setText("");
+            }
+        });
+        userNameSearchField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                if(userNameSearchField.getText().equals(""))
+                    userNameSearchField.setText("Enter a name");
+            }
+        });
+
+        javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
+        panelRound2.setLayout(panelRound2Layout);
+        panelRound2Layout.setHorizontalGroup(
+            panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound2Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelRound2Layout.createSequentialGroup()
+                        .addComponent(dashboardLabel1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelRound2Layout.createSequentialGroup()
+                        .addComponent(userNameSearchField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20))))
         );
-        searchPanelLayout.setVerticalGroup(
-            searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchPanelLayout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
-                .addComponent(searchLabel)
-                .addGap(6, 6, 6)
-                .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16))
+        panelRound2Layout.setVerticalGroup(
+            panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRound2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(dashboardLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(userNameSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        userInformationPanel.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound4.setBackground(new java.awt.Color(255, 255, 255));
+        panelRound4.setRoundBottomLeft(20);
+        panelRound4.setRoundBottomRight(20);
+        panelRound4.setRoundTopLeft(20);
+        panelRound4.setRoundTopRight(20);
 
-        userInformationLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        userInformationLabel.setForeground(new java.awt.Color(40, 48, 59));
-        userInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        userInformationLabel.setText("User Information");
+        dashboardLabel2.setFont(new java.awt.Font("Microsoft YaHei Light", 1, 12)); // NOI18N
+        dashboardLabel2.setForeground(new java.awt.Color(40, 48, 59));
+        dashboardLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dashboardLabel2.setText("Users Summary");
+        dashboardLabel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 0));
+        dashboardLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                dashboardLabel2MouseEntered(evt);
+            }
+        });
 
-        idLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        idLabel.setForeground(new java.awt.Color(40, 48, 59));
-        idLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        idLabel.setText("ID:");
+        usersQuery.setBackground(new java.awt.Color(255, 255, 255));
+        usersQuery.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        usersQuery.setForeground(new java.awt.Color(0, 0, 0));
 
-        firstNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        firstNameLabel.setForeground(new java.awt.Color(40, 48, 59));
-        firstNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        firstNameLabel.setText("First Name:");
+        model = new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        lastNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lastNameLabel.setForeground(new java.awt.Color(40, 48, 59));
-        lastNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lastNameLabel.setText("Last Name:");
+            },
+            new String [] {
+                "ID", "First Name", "Last Name", "Clearance Level"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
 
-        clearanceLevelLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        clearanceLevelLabel.setForeground(new java.awt.Color(40, 48, 59));
-        clearanceLevelLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        clearanceLevelLabel.setText("Clearance Level:");
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        };
+        usersQuery.setModel(model);
+        usersQuery.setRowHeight(20);
+        usersQuery.setSelectionBackground(new java.awt.Color(22, 98, 243));
+        jScrollPane3.setViewportView(usersQuery);
 
-        idField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        idField.setForeground(new java.awt.Color(40, 48, 59));
-        idField.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        idField.setText("REPLACE WITH ID");
-
-        firstNameField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        firstNameField.setForeground(new java.awt.Color(40, 48, 59));
-        firstNameField.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        firstNameField.setText("REPLACE WITH FIRST NAME");
-
-        lastNameField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lastNameField.setForeground(new java.awt.Color(40, 48, 59));
-        lastNameField.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lastNameField.setText("REPLACE WITH LAST NAME");
-
-        clearanceField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        clearanceField.setForeground(new java.awt.Color(40, 48, 59));
-        clearanceField.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        clearanceField.setText("REPLACE WITH CLEARANCE");
-
-        javax.swing.GroupLayout userInformationPanelLayout = new javax.swing.GroupLayout(userInformationPanel);
-        userInformationPanel.setLayout(userInformationPanelLayout);
-        userInformationPanelLayout.setHorizontalGroup(
-            userInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(userInformationPanelLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(userInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(firstNameLabel)
-                    .addComponent(idLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(userInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(userInformationPanelLayout.createSequentialGroup()
-                        .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(56, 56, 56)
-                        .addComponent(lastNameLabel))
-                    .addGroup(userInformationPanelLayout.createSequentialGroup()
-                        .addComponent(firstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(clearanceLevelLabel)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(userInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clearanceField, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 8, Short.MAX_VALUE))
-            .addGroup(userInformationPanelLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(userInformationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout panelRound4Layout = new javax.swing.GroupLayout(panelRound4);
+        panelRound4.setLayout(panelRound4Layout);
+        panelRound4Layout.setHorizontalGroup(
+            panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound4Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dashboardLabel2)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 654, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
-        userInformationPanelLayout.setVerticalGroup(
-            userInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(userInformationPanelLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(userInformationLabel)
-                .addGap(22, 22, 22)
-                .addGroup(userInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(idLabel)
-                    .addComponent(idField)
-                    .addComponent(lastNameLabel)
-                    .addComponent(lastNameField))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(userInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(firstNameLabel)
-                    .addComponent(clearanceLevelLabel)
-                    .addComponent(firstNameField)
-                    .addComponent(clearanceField))
-                .addContainerGap(225, Short.MAX_VALUE))
+        panelRound4Layout.setVerticalGroup(
+            panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound4Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(dashboardLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout usersTabLayout = new javax.swing.GroupLayout(usersTab);
@@ -601,33 +564,48 @@ public class SystemTerminalGui extends javax.swing.JFrame {
         usersTabLayout.setHorizontalGroup(
             usersTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(usersTabLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(30, 30, 30)
                 .addGroup(usersTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(usersLabel)
-                    .addComponent(searchPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(userInformationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(14, 14, 14))
+                    .addComponent(panelRound2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel6)
+                    .addComponent(panelRound4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         usersTabLayout.setVerticalGroup(
             usersTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(usersTabLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(usersLabel)
+                .addGap(20, 20, 20)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(searchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(userInformationPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addComponent(panelRound2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panelRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(247, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("tab2", usersTab);
+
+        jPanel1.setBackground(new java.awt.Color(247, 247, 247));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 771, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 771, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("tab3", jPanel1);
 
         javax.swing.GroupLayout configContentLayout = new javax.swing.GroupLayout(configContent);
         configContent.setLayout(configContentLayout);
         configContentLayout.setHorizontalGroup(
             configContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(configContentLayout.createSequentialGroup()
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 771, Short.MAX_VALUE)
+                .addComponent(jTabbedPane2)
                 .addContainerGap())
         );
         configContentLayout.setVerticalGroup(
@@ -652,7 +630,7 @@ public class SystemTerminalGui extends javax.swing.JFrame {
         configPageLayout.setVerticalGroup(
             configPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(sidebar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(configContent, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(configContent, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         getContentPane().add(configPage, "card3");
@@ -668,28 +646,37 @@ public class SystemTerminalGui extends javax.swing.JFrame {
         // TODO add your handling code here:
     }                                             
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        String enteredId = KeyIdField.getText().toString();
-        String enteredPassword = PasswordField.getText().toString();
-        System.out.println(enteredId + " " + enteredPassword);
-        User temp = gui.authenticateUser(UUID.fromString(enteredId));
-        if(temp != null) {
-            LoginScreen.setVisible(false);
-            configPage.setVisible(true);
-        }
+    private void signInBtnActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
     }                                        
-
-    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        // TODO add your handling code here:
-    }                                         
-
-    private void searchFieldActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
-    }                                           
 
     private void userLabelMouseClicked(java.awt.event.MouseEvent evt) {                                       
         // TODO add your handling code here:
     }                                      
+
+    private void KeyIdFieldMouseClicked(java.awt.event.MouseEvent evt) {                                        
+        KeyIdField.setText("");
+    }                                       
+
+    private void dashboardLabelMouseEntered(java.awt.event.MouseEvent evt) {                                            
+        dashboardLabel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+    }                                           
+
+    private void dashboardLabel1MouseEntered(java.awt.event.MouseEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+    }                                        
+
+    private void userNameSearchFieldActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void dashboardLabel2MouseEntered(java.awt.event.MouseEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
 
     /**
      * @param args the command line arguments
@@ -732,47 +719,39 @@ public class SystemTerminalGui extends javax.swing.JFrame {
     private javax.swing.JPanel LoginScreen;
     private javax.swing.JTextField PasswordField;
     private javax.swing.JLabel SignInToAccText;
-    private javax.swing.JLabel clearanceField;
-    private javax.swing.JLabel clearanceLevelLabel;
     private javax.swing.JPanel configContent;
     private javax.swing.JPanel configPage;
-    private javax.swing.JLabel dashLabel;
-    private javax.swing.JLabel dashLabel3;
-    private javax.swing.JLabel dashLabel5;
-    private javax.swing.JLabel dashLabel6;
+    private javax.swing.JLabel dashboardLabel;
+    private javax.swing.JLabel dashboardLabel1;
+    private javax.swing.JLabel dashboardLabel2;
     private javax.swing.JPanel dashboardTab;
-    private javax.swing.JLabel empLabel;
-    private javax.swing.JLabel empNum;
-    private javax.swing.JPanel empPanel;
-    private javax.swing.JPanel empPanel2;
-    private javax.swing.JLabel firstNameField;
-    private javax.swing.JLabel firstNameLabel;
-    private javax.swing.JLabel idField;
-    private javax.swing.JLabel idLabel;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton signInBtn;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel firstNameLabel;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JLabel keyLabel;
-    private javax.swing.JLabel lastNameField;
-    private javax.swing.JLabel lastNameLabel;
     private javax.swing.JLabel logOutLabel;
-    private javax.swing.JButton searchBtn;
-    private searchTextField searchField;
-    private javax.swing.JLabel searchLabel;
-    private javax.swing.JPanel searchPanel;
+    private swing_assets.PanelRound panelRound1;
+    private swing_assets.PanelRound panelRound2;
+    private swing_assets.PanelRound panelRound3;
+    private swing_assets.PanelRound panelRound4;
     private javax.swing.JPanel sidebar;
-    private javax.swing.JLabel staffLabel;
-    private javax.swing.JLabel staffNum;
-    private javax.swing.JPanel staffPanel;
     private javax.swing.JLabel systemLabel;
-    private javax.swing.JLabel userInformationLabel;
-    private javax.swing.JPanel userInformationPanel;
+    private swing_assets.TextField userNameSearchField;
     private javax.swing.JLabel userLabel;
-    private javax.swing.JLabel usersLabel;
+    private swing_assets.Table usersQuery;
     private javax.swing.JPanel usersTab;
-    private javax.swing.JPanel warningPanel;
+    private SystemTerminal terminal;
+    private DefaultTableModel model;
     // End of variables declaration                   
 }
