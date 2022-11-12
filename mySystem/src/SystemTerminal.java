@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.UUID;
 
 public class SystemTerminal{
@@ -53,7 +54,7 @@ public class SystemTerminal{
         // -TO-DO-
     }
 
-    public void authenticateUser(UUID keyId) {
+    public User authenticateUser(UUID keyId) {
         Key key = findKey(keyId);
         
         // CHECK KEY
@@ -68,6 +69,7 @@ public class SystemTerminal{
 
                         // DEBUG
                         System.out.println("ACCESS GRANTED TO " + user.getName().toUpperCase());
+                        return user;
                     } else{
                         // -TO-DO-
                         // DENY ACCESS
@@ -76,6 +78,7 @@ public class SystemTerminal{
 
                         // DEBUG
                         System.out.println("USER IS NULL");
+                        return null;
                     }
                 } else{
                     // -TO-DO-
@@ -84,6 +87,7 @@ public class SystemTerminal{
 
                     // DEBUG
                     System.out.println("KEY DOESN'T HAVE CLEARANCE");
+                    return null;
                 }
             } else{
                 // -TO-DO-
@@ -92,6 +96,7 @@ public class SystemTerminal{
 
                 // DEBUG
                 System.out.println("KEY IS INACTIVE");
+                return null;
             }
         } else{
             // -TO-DO-
@@ -101,6 +106,7 @@ public class SystemTerminal{
 
             // DEBUG
             System.out.println("KEY IS NULL");
+            return null;
         }
     }   
 
@@ -206,6 +212,38 @@ public class SystemTerminal{
         return null;
     }
 
+    public ArrayList<Object[]> populateTable() {
+        String url = "jdbc:mysql://localhost/files";
+        String uid = "root";
+        String pw = "310rootypw";
+
+        String selectStatement = """
+            SELECT *
+            FROM users
+            ORDER BY firstName LIMIT 5
+        """;
+
+        try ( Connection con = DriverManager.getConnection(url, uid, pw);
+        PreparedStatement pstmt = con.prepareStatement(selectStatement, ResultSet.TYPE_SCROLL_SENSITIVE, 
+        ResultSet.CONCUR_UPDATABLE);) 
+        {
+            ResultSet resultSet = pstmt.executeQuery();
+            ArrayList<Object[]> rows = new ArrayList<Object[]>();
+
+            while(resultSet.next()){
+                Key key = findKey(UUID.fromString(resultSet.getString("kuuid")));
+                Object[] row  = {resultSet.getString("uuid"), resultSet.getString("firstName"), resultSet.getString("lastName"), String.valueOf(key.getClearanceLevel())};
+                rows.add(row);
+            }
+
+            return rows;
+        }
+        catch (SQLException ex)
+        {
+            System.err.println("SQLException: " + ex);
+            return null;
+        }
+    }
 }
 
 
