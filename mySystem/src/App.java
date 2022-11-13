@@ -1,97 +1,94 @@
-import java.io.*;
+import java.io.File;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Scanner;
+import java.util.UUID;
+
 public class App {
+    private Connection con;
     public static void main(String[] args) throws Exception {
+        // AccessTerminal a = new AccessTerminal(new Room(200, 3, 4));
+        // a.authenticateUser(UUID.fromString("eba78f05-a0fe-43c1-be91-13adc826d495"));
+        // a.authenticateUser(UUID.fromString("38f5b748-0ca9-4873-ad07-014749cf8389"));
 
-        User a = new User("John", "Doe", "password");
-        User b = new User("Jen", "Doe");
-        User c = new User("Bert", "Murphy");
-        User d = new User("Lily", "Smith");
+        App app = new App();
+                
+        app.connect();
+        app.init();
+        app.close();
 
-        Key k_a = new Key(7);
-        Key k_b = new Key(1);
-        Key k_c = new Key(5);
-        Key k_d = new Key(2);
-
-        a.setKey(k_a);
-        b.setKey(k_b);
-        c.setKey(k_c);
-        d.setKey(k_d);
-
-        System.out.println(a.getName() + " " + k_a.getId());
-        System.out.println(d.getName() + " " + k_d.getId());
+        SystemTerminalGui a = new SystemTerminalGui();
+        a.main(args);
         
-        User[] userList = {a, b, c, d};
-        Key[] keyList = {k_a, k_b, k_c, k_d};
-
-
-        // Serialization USERS
-        try
-        {   
-            FileOutputStream file = new FileOutputStream("userData.ser"); 
-            ObjectOutputStream out = new ObjectOutputStream(file); 
-              
-            for(User user: userList)
-                out.writeObject(user);
-              
-            out.close(); 
-            file.close();
-              
-            System.out.println("Object has been serialized"); 
-  
-        } catch(IOException ex) 
-        { 
-            System.out.println("IOException is caught (USER|IN)"); 
-        } 
-
-        // Serialization KEY
-        try
-        {   
-            FileOutputStream file = new FileOutputStream("keyData.ser"); 
-            ObjectOutputStream out = new ObjectOutputStream(file); 
-              
-            for(Key key: keyList)
-                out.writeObject(key);
-              
-            out.close(); 
-            file.close();
-              
-            System.out.println("Object has been serialized"); 
-  
-        } catch(IOException ex) 
-        { 
-            System.out.println("IOException is caught (KEY|IN)"); 
-        }
-
-        // try
-        // {   
-        //     FileInputStream file = new FileInputStream("keyData.ser"); 
-        //     ObjectInputStream out = new ObjectInputStream(file); 
-              
-        //     Key key = (Key) out.readObject();
-        //     while(key!= null){
-        //         System.out.println(key.getId());
-        //         key = (Key) out.readObject();
-        //     }
-              
-        //     out.close(); 
-        //     file.close();
-              
-        //     System.out.println("Object has been serialized"); 
-  
-        // } catch(IOException ex) 
-        // { 
-        //     System.out.println("IOException is caught (KEY|READ)"); 
-        // } 
-        
-
-        AccessTerminal t_a = new AccessTerminal(new Room(53, 2, 5));
-        t_a.accessTerminalLogin();
-
-        // SystemConsole s_a = new SystemConsole(new Room(53, 2, 7));
-        // s_a.systemLogin();
-
-
-
 
     }
+	public Connection connect() throws SQLException
+	{
+        String url = "jdbc:mysql://localhost/files";
+        String uid = "root";
+        String pw = "310rootypw";
+
+		System.out.println("Connecting to database.");
+		// Note: Must assign connection to instance variable as well as returning it back to the caller
+		con = DriverManager.getConnection(url, uid, pw);
+		return con;		                       
+	}
+	
+	/**
+	 * Closes connection to database.
+	 */
+	public void close()
+	{
+		System.out.println("Closing database connection.");
+		try
+		{
+			if (con != null)
+	            con.close();
+		}
+		catch (SQLException e)
+		{
+			System.out.println(e);
+		}
+	}
+
+
+
+
+    public void init()
+	{
+	    String fileName = "ddl/MySQL_Files_DDL.sql";
+	    Scanner scanner = null;
+	    
+	    try
+	    {
+	        // Create statement
+	        Statement stmt = con.createStatement();
+	        scanner = new Scanner(new File(fileName));
+	        // Read commands separated by ;
+	        scanner.useDelimiter(";");
+	        while (scanner.hasNext())
+	        {
+	            String command = scanner.next();
+	            if (command.trim().equals(""))
+	                continue;
+	            // System.out.println(command);        // Uncomment if want to see commands executed
+	            stmt.execute(command);
+	        }	        
+	    }
+	    catch (Exception e)
+	    {
+	        System.out.println(e);
+	    }      
+	    if (scanner != null)
+	    	scanner.close();
+	    
+	    System.out.println("Data successfully loaded.");
+	}
 }
