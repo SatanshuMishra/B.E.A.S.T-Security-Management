@@ -156,7 +156,7 @@ public class testbeast
         s.init();
     
         Key key = new Key(UUID.fromString("38f5b748-0ca9-4873-ad07-014749cf8389"), 5, true);
-         User result = s.authenticateUser(key.getId());
+         User result = s.authenticateUser(key.getId().toString());
 
          UUID resid = result.getId();
          String resfirst = result.getFirstName();
