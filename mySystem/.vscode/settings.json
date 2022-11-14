@@ -3,7 +3,9 @@
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "mysql-connector-java-8.0.27.jar"
+        "mysql-connector-java-8.0.27.jar",
+        "junit-jupiter-api-5.8.2.jar",
+        "junit-platform-console-standalone-1.8.2.jar"
     ],
     "better-comments.highlightPlainText": true,
     "color-highlight.matchWords": true

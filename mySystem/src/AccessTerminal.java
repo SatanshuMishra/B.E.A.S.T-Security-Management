@@ -1,7 +1,7 @@
 import java.sql.*;
 import java.util.UUID;
 
-public class AccessTerminal{
+public class AccessTerminal extends App{
     private UUID id;
     private int securityLevel;
     private boolean isActive = true;
