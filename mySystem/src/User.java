@@ -5,7 +5,7 @@ public class User{
 	private String firstName;
 	private String lastName;
 	private Key key;
-	private String loginKey;
+	private String loginKey = null;
 	
 	User(String firstName, String lastName){
 		this.id = UUID.randomUUID();
@@ -17,6 +17,13 @@ public class User{
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
+	}
+
+	User(String firstName, String lastName, Key key){
+		this.id = UUID.randomUUID();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.key = key;
 	}
 
 	User(UUID id, String firstName, String lastName, Key key){
@@ -42,6 +49,14 @@ public class User{
 
 	User(UUID id, String firstName, String lastName, Key key, String loginKey){
 		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.key = key;
+		this.loginKey = loginKey;
+	}
+
+		User(String firstName, String lastName, Key key, String loginKey){
+		this.id = UUID.randomUUID();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.key = key;

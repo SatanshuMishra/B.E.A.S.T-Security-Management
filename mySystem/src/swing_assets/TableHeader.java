@@ -12,14 +12,14 @@ public class TableHeader extends JLabel {
         setOpaque(true);
         setBackground(Color.WHITE);
         setFont(new Font("sansserif", 1, 12));
-        setForeground(new Color(102, 102, 102));
+        setForeground(new Color(0,0,0));
         setBorder(new EmptyBorder(10, 5, 10, 5));
     }
 
     @Override
     protected void paintComponent(Graphics grphcs) {
         super.paintComponent(grphcs);
-        grphcs.setColor(new Color(230, 230, 230));
+        grphcs.setColor(new Color(255,255,255));
         grphcs.drawLine(0, getHeight() - 1, getWidth(), getHeight() - 1);
     }
 }

@@ -26,8 +26,8 @@ public class AccessTerminal{
         
         // CHECK KEY
         if(key != null){
-            if(key.isActive){
-                if(key.clearanceLevel >= securityLevel){
+            if(key.getIsActive()){
+                if(key.getClearanceLevel() >= securityLevel){
                     User user = findUser(key);
                     if(user != null){
                         // -TO-DO-

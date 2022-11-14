@@ -1,9 +1,9 @@
 import java.util.UUID;
 
 public class Key{
-	UUID id;
-	int clearanceLevel;
-	boolean isActive = true;
+	private UUID id;
+	private int clearanceLevel;
+	private boolean isActive = true;
 	
 	Key(int clearanceLevel){
 		this.id = UUID.randomUUID();
@@ -12,6 +12,12 @@ public class Key{
 
 	Key(UUID id, int clearanceLevel, boolean isActive){
 		this.id = id;
+		this.clearanceLevel = clearanceLevel;
+		this.isActive = isActive;
+	}
+
+		Key(int clearanceLevel, boolean isActive){
+		this.id = UUID.randomUUID();
 		this.clearanceLevel = clearanceLevel;
 		this.isActive = isActive;
 	}
