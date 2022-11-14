@@ -2,7 +2,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class SystemTerminal{
+public class SystemTerminal extends App{
     private UUID id;
     private Room room;
 
