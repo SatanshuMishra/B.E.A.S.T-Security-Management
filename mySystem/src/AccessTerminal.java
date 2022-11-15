@@ -174,4 +174,40 @@ public class AccessTerminal extends App{
         return null;
     }
 
+    public UUID getId() {
+        return id;
+    }
+    public void setId(UUID id) {
+        this.id = id;
+    }
+    public Room getRoom() {
+        return room;
+    }
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+    public int getSecurityLevel() {
+        return securityLevel;
+    }
+    public void setSecurityLevel(int securityLevel) {
+        this.securityLevel = securityLevel;
+    }
+    
+    public void setActive(boolean isActive) {
+        this.isActive = isActive;
+    }
+
+    public boolean getActive() {
+        return isActive;
+    }
+
+    public void setLocked(boolean isLocked) {
+        this.isLocked = isLocked;
+    }
+
+    public boolean getLocked() {
+        return isLocked;
+    }
+
+    
 }
