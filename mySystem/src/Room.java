@@ -1,7 +1,7 @@
 public class Room{
-	int roomNumber;
-	int floor;
-	int clearanceLevel;
+	private int roomNumber;
+	private int floor;
+	private int clearanceLevel;
 	
 	Room(int roomNumber, int floor, int clearanceLevel){
 		this.roomNumber = roomNumber;
@@ -11,6 +11,26 @@ public class Room{
 
 	public int getClearanceLevel() {
 		return clearanceLevel;
+	}
+
+	public void setClearanceLevel(int clearanceLevel) {
+			this.clearanceLevel = clearanceLevel;
+	}
+
+	public int getFloor() {
+			return floor;
+	}
+
+	public void setFloor(int floor) {
+			this.floor = floor;
+	}
+
+	public int getRoomNumber() {
+			return roomNumber;
+	}
+
+	public void setRoomNumber(int roomNumber) {
+			this.roomNumber = roomNumber;
 	}
 
 }
