@@ -135,16 +135,16 @@ Features programmed for A3:
 	- The use of a database, rather than a .txt file, allows for much easier retrieval and organisation of data. it also allows our data to be more secured.
 - Implamentation of System Terminal GUI
 	- By using a database, multiple functions are implamented within the GUI. The below features allow for our system to do what we intend for it to do: 
-		- finduser: refer to functionality in system terminal section above
-		- findkey: refer to functionality in system terminal section above
+		- finduser: this finds the user using their respective key ID from the database. refer to functionality in system terminal section above
+		- findkey: this finds the key in the database. refer to functionality in system terminal section above
 		- checkpassword: refer to functionality in system terminal section above
-		- authenticate user: refer to functionality in system terminal section above
+		- authenticate user: this checks if both the user and key are matched and are of correct clearance level. refer to functionality in system terminal section above
 	- the GUI also provides more functinality: 
-		- add user: refer to functionality in system terminal section above
-		- modify user: refer to functionality in system terminal section above
-		- count users: refer to functionality in system terminal section above
-		- count privileged users: refer to functionality in system terminal section above
-		- count suspended users: refer to functionality in system terminal section above
+		- add user: adds a user to the system. refer to functionality in system terminal section above
+		- modify user: edit user information in the system. refer to functionality in system terminal section above
+		- count users: counts the number of users in the system. refer to functionality in system terminal section above
+		- count privileged users: counts the number of privileged users in the system. refer to functionality in system terminal section above
+		- count suspended users: counts the number of suspended users in the system. refer to functionality in system terminal section above
 		- search for users: the ability to search for a user within the system using their name
 		
 
