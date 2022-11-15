@@ -130,6 +130,27 @@ The main class for our System. This is where instances of the Access Terminal an
 
 Additionally, for collaberative purposes, this class holds methods that automatically initialise the database based upon a pre-written .ddl file. This allows for identical databases to be initialised across all devices the system is being constructed on.
 
+Features programmed for A3:
+- Usage of database for data storage
+	- The use of a database, rather than a .txt file, allows for much easier retrieval and organisation of data. it also allows our data to be more secured.
+- Implamentation of System Terminal GUI
+	- By using a database, multiple functions are implamented within the GUI. The below features allow for our system to do what we intend for it to do: 
+		- finduser: refer to functionality in system terminal section above
+		- findkey: refer to functionality in system terminal section above
+		- checkpassword: refer to functionality in system terminal section above
+		- authenticate user: refer to functionality in system terminal section above
+	- the GUI also provides more functinality: 
+		- add user: refer to functionality in system terminal section above
+		- modify user: refer to functionality in system terminal section above
+		- count users: refer to functionality in system terminal section above
+		- count privileged users: refer to functionality in system terminal section above
+		- count suspended users: refer to functionality in system terminal section above
+		- search for users: the ability to search for a user within the system using their name
+		
+
+for further explanation and demonstration of all of the functions and the system as a whole, please watch this [Demonstration Video](https://www.youtube.com/watch?v=m3VMkwBpr50)
+
+
 
 Running our System:
 In order to run our system, please follow the following steps:
