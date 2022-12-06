@@ -4,122 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e572f73-a4af-4595-bfde-4d39d415cc83" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_13_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_api_client_google_api_client_2_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_apis_google_api_services_gmail_v1_rev20220404_2_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_apis_google_api_services_sheets_v4_rev20220927_2_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_11_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_31_1_jre.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_http_client_google_http_client_1_42_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_http_client_google_http_client_apache_v2_1_42_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_http_client_google_http_client_gson_1_42_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_http_client_google_http_client_jackson2_1_42_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_oauth_client_google_oauth_client_1_34_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_oauth_client_google_oauth_client_java6_1_34_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_oauth_client_google_oauth_client_jetty_1_34_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_grpc_grpc_context_1_27_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_opencensus_opencensus_api_0_31_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_opencensus_opencensus_contrib_http_util_0_31_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_15.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_12_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_5_3_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Mailer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/announcementPan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sheetsExtract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/SearchIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/client_secret_819210982366-7hmlgfokokpu7hg727jmhb10rsbqbsvk.apps.googleusercontent.com.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/code-compare (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/code-compare.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/credentials.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dashboard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/exit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icons8-account-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icons8-logout-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icons8-notification-24 (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icons8-password-key-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icons8-search-20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icons8-search-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/icons8-system-information-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/keyeeee.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sensor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/undraw_dev_focus_re_6iwt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/undraw_dev_focus_re_6iwt@0.8x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/undraw_fingerprint_re_uf3f@0.8x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/undraw_hello_re_3evm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/undraw_my_password.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/users-alt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/users_settings_24px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tokens/StoredCredential" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddl/MySQL_Files_DDL.sql" beforeDir="false" afterPath="$PROJECT_DIR$/ddl/MySQL_Files_DDL.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mySystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mySystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AccessTerminal.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AccessTerminal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AccessTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AccessTerminal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddUserModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AddUserModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUITerminal$buttonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUITerminal$buttonListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUITerminal.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUITerminal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUITerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUITerminal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Key.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Key.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Key.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ManageFramework.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ManageFramework.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ManageFramework.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ManageFramework.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ModifyUserModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ModifyUserModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Notify.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SystemTerminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SystemTerminal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SystemTerminalGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SystemTerminalGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/SearchIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/SearchIcon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/code-compare (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/code-compare (1).png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/code-compare.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/code-compare.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/dashboard.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/dashboard.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/exit.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/exit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/icons8-account-24.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/icons8-account-24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/icons8-logout-24.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/icons8-logout-24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/icons8-notification-24 (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/icons8-notification-24 (1).png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/icons8-password-key-24.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/icons8-password-key-24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/icons8-search-20.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/icons8-search-20.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/icons8-search-24.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/icons8-search-24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/icons8-system-information-24.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/icons8-system-information-24.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/keyeeee.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/keyeeee.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/sensor.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/sensor.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/undraw_dev_focus_re_6iwt.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/undraw_dev_focus_re_6iwt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/undraw_dev_focus_re_6iwt@0.8x.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/undraw_dev_focus_re_6iwt@0.8x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/undraw_fingerprint_re_uf3f@0.8x.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/undraw_fingerprint_re_uf3f@0.8x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/undraw_hello_re_3evm.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/undraw_hello_re_3evm.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/undraw_my_password_re_ydq7@0.8x.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/undraw_my_password.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/users-alt.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/users-alt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/users_settings_24px.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/res/users_settings_24px.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swing_assets/ModernScrollBarUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/swing_assets/ModernScrollBarUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swing_assets/PanelRound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/swing_assets/PanelRound.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swing_assets/ScrollBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/swing_assets/ScrollBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swing_assets/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/swing_assets/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swing_assets/TableHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/swing_assets/TableHeader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swing_assets/TextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/swing_assets/TextField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testbeast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testbeast.java" afterDir="false" />
-    </list>
+    <list default="true" id="9e572f73-a4af-4595-bfde-4d39d415cc83" name="Changes" comment="V1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -194,6 +79,14 @@
       <option name="presentableId" value="Default" />
       <updated>1665968891691</updated>
     </task>
+    <task id="LOCAL-00001" summary="V1">
+      <created>1670310723280</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670310723280</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,5 +102,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="V1" />
+    <option name="LAST_COMMIT_MESSAGE" value="V1" />
   </component>
 </project>
