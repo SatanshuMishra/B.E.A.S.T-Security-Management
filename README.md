@@ -166,3 +166,9 @@ Privileged User Credential to try out the system:
 John Doe
 Key ID: 38f5b748-0ca9-4873-ad07-014749cf8389
 Password: Johnpass
+
+## Contributions
+Contributions to this project were made by:
+* [Satanshu Mishra](https://github.com/SatanshuMishra)
+* [Ahmed Al Rubaii](https://github.com/AhmedAlRubaii)
+* Caitlin Chang
